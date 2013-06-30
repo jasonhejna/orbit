@@ -1,0 +1,36 @@
+<html>
+<body onload="rotate()">
+<span id="cir" style="position:absolute; top:100px; left:300px;z-index:2">[ <font color="red">Cool car 1</font> ]</span>
+<p id="circle">Circle</p>
+<p id="circle2">Circle</p>
+<script type="text/javascript"><!--
+orb1="";
+function rotate(){
+clearTimeout(orb1);
+
+orbit();
+setTimeout("rotate()",5000);
+}
+// CIRCLE
+R0=50; // Radius
+A=0; // Rads. 1 degree = 3.14150/180 radians
+//cx=screen.availwidth/2-cir.offsetWidth/2 //use for centering x
+//cy=screen.availHeight/2-cir.offsetHeight/2 // use for centering y
+cx=parseInt(document.getElementById("cir").style.left); // use for positioning left
+cy=parseInt(document.getElementById("cir").style.top); // use for positioning top
+
+function orbit(){
+A=A+.05; // Increase angle adding .1 each time. Change direction by subtracting.
+c=Math.cos(A);
+s=Math.sin(A);
+x=(R0*c)+cx; // new x coordinates
+y=(R0*s)+cy; // new y coordinates
+document.getElementById("cir").style.left=parseInt(x);
+document.getElementById("cir").style.top=parseInt(y);
+document.getElementById("circle").innerHTML="Circle x = "+parseInt(x);
+document.getElementById("circle2").innerHTML="Circle y = "+parseInt(y);
+orb1=setTimeout("orbit()",30);
+} 
+// --></script>
+</body>
+</html>

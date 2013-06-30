@@ -1,0 +1,15 @@
+#minmaxLL{
+
+	width: 800px;
+	height: 800px;
+	float:left;
+	background-color: #000;
+}
+#movingDot{
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	background-color: red;
+	top:150px;
+	left:150px;
+}
